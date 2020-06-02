@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "tmp-dr-frm",
+    "blog": "tmp-dr-frm"
+  }
+}

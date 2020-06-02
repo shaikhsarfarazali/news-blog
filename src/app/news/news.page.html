@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Daily News</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size-md="6" offset-md="3">
+      <ion-card-content>
+        <form #userForm="ngForm">
+          <ion-item >
+            <ion-label  position="floating">Title</ion-label>
+            <ion-input [(ngModel)]="title" name="rname" #Title type="text" 
+            pattern="^[a-zA-Z '\s-]+$" required></ion-input>
+          </ion-item>
+          <div>
+            <ion-item>
+              <ion-label position="floating">Description</ion-label>
+              <ion-textarea [(ngModel)]="description" #Description name="ring" rows="5" required></ion-textarea>
+            </ion-item>
+          </div>
+          <ion-item>
+            <ion-input [(ngModel)]="image" name="images" #Image type="file" 
+            (change)="fileProgress($event)"
+             required></ion-input>
+          </ion-item>
+          <div>
+            <ion-item>
+              <ion-label position="floating">Author</ion-label>
+              <ion-textarea [(ngModel)]="author" #Author name="ring" rows="5" 
+              pattern="^[a-zA-Z '\s-]+$" required></ion-textarea>
+            </ion-item>
+          </div>
+    
+          
+          <ion-button [disabled]="userForm.form.invalid" color="dark"
+          (click)="news(Title.value, Description.value, Image.value, Author.value)">
+            Submit</ion-button>
+            <ion-button color="dark" (click)="showNews()" >Todays News</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-button slot="start" color="dark">
+      <ion-back-button defaultHref="/show-news">
+      </ion-back-button>
+    </ion-button>
+    <ion-title> {{ loadNews.Author }} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-img [src] = "loadNews.Image"></ion-img>
+          <ion-card-title> {{ loadNews.Title }}  </ion-card-title>
+          <h5>{{ loadNews.Description }}</h5>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
